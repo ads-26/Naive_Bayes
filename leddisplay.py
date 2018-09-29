@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 import sklearn 
 import numpy as np
@@ -79,7 +79,6 @@ print(str(acc))
 cf=(confusion_matrix(y_test,y_pred))
 print(cf)
 
-
 for i in range(len(cf)):
     f=1
     for j in range(len(cf[0])):
@@ -91,7 +90,6 @@ for i in range(len(cf)):
         f+=cf[j][i]
     tn.append(f)
     
-
 pre=0
 rec=0
 i=0
@@ -102,24 +100,13 @@ for i in range(len(cf)):
 precision=pre*100/len(cf)
 recall=rec*100/len(cf)
 
-
 print('Average precision score: {0:0.2f}'.format(precision))
 print('Average recall score: {0:0.2f}'.format(recall))
-#avg_recall=recall(y_test,y_pred)
-
-
-#y_pred_proba = clf.predict_proba(X_test)[:,1]
-#print(y_pred_proba)
-#fpr,tpr,threshold = roc_curve(y_test,y_pred)
-
-#plt.plot(fpr,tpr,color='y')
 
 f1 = (2*precision*recall)/(precision+recall)
 print('Average f1 score: {0:0.2f}'.format(f1))
 
-        
 print("***********************************************")
-#print()
 
 fpr = dict()
 tpr = dict()
